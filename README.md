@@ -4,7 +4,7 @@
 | Author |	Zengjie Zhang |  
 | Revision |	1.0 |  
 | Date |	2021.09.23 |  
-| Targeted Readers |	Masoud, Ardeshir, Maziyar, Shey, Todd |  
+| Targeted Readers |	Masoud, Ardeshir, Maziyar, Maryam, Seyi, Todd |  
 
 This is an essential manual on how you can use the basic GitHub functionalities to manage the projects. To use GitHub for management (without pushing or pulling the codes), you do not have to install anything on your computer, including Git. Everything can be proceeded in your browser. Please feel free to add any additional contents to enrich the scope of this manual.
 
