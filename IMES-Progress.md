@@ -9,10 +9,12 @@ progress: **20%**
 
 ### paper: Transfer Learning for Condition Monitoring of Rotating Machinery
 @Masoud imported and made the dataset ready to implement. 
-@Todd is replicating WC-RNN and @Ardeshir is replicating an imporved CNN to train on the dataset.
-@Seyi is working on the feature engineering / signal processing part: EEMD technique is getting ready to implement.
+@Todd is replicating WC-RNN.
+@Masoud developed an imporved CNN, AE and a ConvLSTM to train on the dataset.
+@Ardeshir is developing a Transfer Learning model.
+@Seyi is working on the feature engineering / signal processing part: EEMD technique is ready; FFT is also under investigation.
 
-progress: **15%**
+progress: **25%**
 
 ### paper: Generative DL for Condition Monitoring of Rotating Machinery
 @Masoud imported and made the dataset ready to implement.
@@ -23,7 +25,7 @@ progress: **15%**
 
 ## Next Stage
 ### paper: SMART SORTER - Deep RL
-@Ardeshir and @Todd find a way to import CAD files to Unity3D.
+@Ardeshir and @Todd are writing the formulation of the problem.
 
 ### paper: Transfer Learning for Condition Monitoring of Rotating Machinery
 @Seyi implements FFT and other transform techniques to extract useful info out of the signals.
