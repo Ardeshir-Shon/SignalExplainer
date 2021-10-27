@@ -34,6 +34,6 @@ progress: **15%**
 
 ## Open Issues
 1- CAD files are not going to be imported directly to Unity. Solutions:
-- Converting the .DWG to .OBJ
-- Purchasing the CAD importer adds-on.
+- Converting the .DWG to .OBJ [solved]
+- Purchasing the CAD importer adds-on. [a month-trial can do the job ==> solved]
 
