@@ -4,8 +4,10 @@
 @Ardeshir, @Todd and @Masoud are working on both Unreal Engine4 and Unity3D to simulate the environment where the sorter wheels are controlable:
 - **UE4**: We have now the Celluveyor hexagonal grids on UE4; @Todd is trying to write C++ scripts to control their wheels. [we left UE4]
 - **Unity**: We wrote some scripts to control the GameObjects on Unity; We're trying to find a way to import CAD files to Unity.[a script to create random objects(random boxes) is written. A script to transform the objects in a given path is written.]
+- @Ardeshir and @Todd have fully defined the initial problem, including the state estimation variables, action space, and reward function.
+- @Ardeshir and @Todd prepared a preliminary presentatioon describing the project in detail.
 
-progress: **20%**
+progress: **25%**
 
 ### paper: Transfer Learning for Condition Monitoring of Rotating Machinery
 @Masoud imported and made the dataset ready to implement. 
