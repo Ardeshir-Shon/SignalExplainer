@@ -1,4 +1,4 @@
-# Prgress Report, Oct 26, 2021
+# Progress Report, Oct 26, 2021
 ## Recent Progress
 ### paper: SMART SORTER - Deep RL
 @Ardeshir, @Todd and @Masoud are working on both Unreal Engine4 and Unity3D to simulate the environment where the sorter wheels are controlable:
