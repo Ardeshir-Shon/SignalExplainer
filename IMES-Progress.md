@@ -9,6 +9,11 @@
 
 progress: **25%**
 
+### Comments
+- **C**: @Masoud I'm a little concerned about the deadline for submission. I noticed you've made 25% progress so far, and I feel we should accelerate a little to meet the 7 and 30 December deadlines. What do you think?
+- I have also checked Overleaf, do you think the team is ready to start writing the introduction, overview, backgorund, and some other sections of the paper 
+- **R**:
+
 ### paper: Transfer Learning for Condition Monitoring of Rotating Machinery
 @Masoud imported and made the dataset ready to implement. 
 @Todd is replicating WC-RNN.
