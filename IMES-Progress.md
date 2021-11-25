@@ -1,3 +1,12 @@
+# Progress Report, November 25, 2021
+## Recent Progress
+### paper: SMART SORTER - Deep RL
+- @Ardeshir and @Todd Created power point presentation with defining project details
+- @Ardeshir started introduction for paper
+- @Todd started problem formulation for paper
+
+progress: **30%**
+
 # Progress Report, Oct 26, 2021
 ## Recent Progress
 ### paper: SMART SORTER - Deep RL
