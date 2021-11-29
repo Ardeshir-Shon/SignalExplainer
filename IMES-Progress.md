@@ -1,15 +1,15 @@
 # Progress Report, November 25, 2021
 ## Recent Progress
 ### paper: SMART SORTER - Deep RL
-- @Ardeshir and @Todd formulated the problem, mathematically and created power point presentation with defining project details
-- @Ardeshir started introduction for paper
-- @Todd started writing the problem formulation for paper
+- @Ardeshir and @Todd formulated the problem, mathematically and created power point presentation with defining project details.
+- @Ardeshir started introduction for paper.
+- @Todd started writing the problem formulation for paper.
 
 progress: **35%**
 
 ### paper: Generative DL for Condition Monitoring of Rotating Machinery
 - @Maryam wrote a draft of the introduction
-- @Masoud checked the dual-GAN performance on the dataset. -- issue: Dual-GAN had a very poor performance
+- @Masoud checked the dual-GAN performance on the dataset. -- **issue**: Dual-GAN had a very poor performance.
 - @Ardeshir and @Masoud are developing a Wasserstein-GAN with GradientPenalty (WGANGP).
 - @Seyi is providing the feature extraction techniques.
 - @Seyi is writing the feature engineering part of the paper.
