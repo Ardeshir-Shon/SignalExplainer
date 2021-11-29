@@ -11,7 +11,7 @@ progress: **35%**
 - @Maryam wrote a draft of the introduction
 - @Masoud developed a simple GAN and a dual-GAN on the dataset. -- **issue**: both Simple GAN and Dual-GAN got poor performances.
 - @Ardeshir and @Masoud are developing a Wasserstein-GAN with GradientPenalty (WGANGP). -- almost done - only a few debuggings left
-- @Ardeshir and @Masoud are developing a Conditional-GAN. -- planning to develop by end of this week.
+- @Ardeshir and @Masoud are developing a Conditional-GAN. -- planning to develop by Dec 6th.
 - @Seyi is providing the feature extraction techniques.
 - @Seyi is writing the feature engineering part of the paper.
 
