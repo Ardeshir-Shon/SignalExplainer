@@ -9,7 +9,7 @@ progress: **35%**
 
 ### paper: Generative DL for Condition Monitoring of Rotating Machinery
 - @Maryam wrote a draft of the introduction
-- @Masoud checked the dual-GAN performance on the dataset. -- **issue**: Dual-GAN had a very poor performance.
+- @Masoud developed the a simple GAN and a dual-GAN on the dataset. -- **issue**: both Simple GAN and Dual-GAN got poor performances.
 - @Ardeshir and @Masoud are developing a Wasserstein-GAN with GradientPenalty (WGANGP).
 - @Seyi is providing the feature extraction techniques.
 - @Seyi is writing the feature engineering part of the paper.
