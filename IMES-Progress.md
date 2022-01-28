@@ -1,28 +1,28 @@
 # Progress Report, January 28, 2022
 ## Recent Progress
-A review paper on ExAI for Processing Plants: @Maryam and @Mass
-	Next steps: setting the keywords and queries to find the related literature – RQs
-  Due: Feb 3rd
+### A review paper on ExAI for Processing Plants: @Maryam and @Mass
+	- Next steps: setting the keywords and queries to find the related literature – RQs
+  - Due: Feb 3rd
 
-A review paper on Scheduling with DL/RL: @Mazzy and @Mass
-	Next steps: RQs and a summary of existing surveys
-	Due: Feb 11th
+### A review paper on Scheduling with DL/RL: @Mazzy and @Mass
+	- Next steps: RQs and a summary of existing surveys
+	- Due: Feb 11th
 
-Adaptive Sorting Paper: @Todd, @Ardeshir, @Mass
-	Next steps: the final draft of the paper
-	Due: Feb 18th
+### Adaptive Sorting Paper: @Todd, @Ardeshir, @Mass
+	- Next steps: the final draft of the paper
+	- Due: Feb 18th
 
-ExAI for Signal-based Bearing Fault Diagnosis: @Ardeshir and @Mass
-	Next steps: Finalizing the manuscript for pre-submission review
-	Due: Feb 15th
+### ExAI for Signal-based Bearing Fault Diagnosis: @Ardeshir and @Mass
+	- Next steps: Finalizing the manuscript for pre-submission review
+	- Due: Feb 15th
 
-A short review paper on Sorting challenges in the industry: @Todd and @Mass
-	Next steps: setting the keywords and queries to find the related literature – RQs
-	Due: March 4th
+### A short review paper on Sorting challenges in the industry: @Todd and @Mass
+	- Next steps: setting the keywords and queries to find the related literature – RQs
+	- Due: March 4th
 
-The Generative algorithm for rotating machinery FDD: @Maryam, @Ardeshir, @Todd, @Seyi, @Mass
-	Next steps: Adding AE to WGAN-GP 
-	Due: Feb 15th
+### The Generative algorithm for rotating machinery FDD: @Maryam, @Ardeshir, @Todd, @Seyi, @Mass
+	- Next steps: Adding AE to WGAN-GP 
+	- Due: Feb 15th
 
 --------------------------------------------------------
 # Progress Report, November 25, 2021
