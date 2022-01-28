@@ -2,7 +2,7 @@
 ## Recent Progress
 ### A review paper on ExAI for Processing Plants: @Maryam and @Mass
 	- Next steps: setting the keywords and queries to find the related literature – RQs
-  - Due: Feb 3rd
+  	- Due: Feb 3rd
 
 ### A review paper on Scheduling with DL/RL: @Mazzy and @Mass
 	- Next steps: RQs and a summary of existing surveys
