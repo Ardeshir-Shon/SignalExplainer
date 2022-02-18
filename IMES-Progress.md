@@ -5,23 +5,23 @@
   	- Due: Feb 3rd
 
 ### A review paper on Scheduling with DL/RL: @Mazzy and @Mass
-	- Next steps: RQs and a summary of existing surveys
-	- Due: Feb 11th
+	- Next steps: RQs and a list of existing surveys
+	- Due: Feb 18th
 
 ### Adaptive Sorting Paper: @Todd, @Ardeshir, @Mass
 	- Next steps: the final draft of the paper
-	- Due: Feb 18th
+	- Due: Feb 25th
 
 ### ExAI for Signal-based Bearing Fault Diagnosis: @Ardeshir and @Mass
 	- Next steps: Finalizing the manuscript for pre-submission review
-	- Due: Feb 15th
+	- Due: Feb 25th
 
 ### A short review paper on Sorting challenges in the industry: @Todd and @Mass
 	- Next steps: setting the keywords and queries to find the related literature – RQs
 	- Due: March 4th
 
 ### The Generative algorithm for rotating machinery FDD: @Maryam, @Ardeshir, @Todd, @Seyi, @Mass
-	- Next steps: Adding AE to WGAN-GP 
+	- Next steps: Revising WGAN-GP so that it takes normal signal and outputs the given fault.
 	- Due: Feb 15th
 
 --------------------------------------------------------
