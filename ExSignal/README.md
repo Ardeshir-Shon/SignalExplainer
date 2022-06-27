@@ -1,4 +1,4 @@
-# Using GitHub to Manage the Projects
+# ExAI for any TF Model and Signal
 | Key | Value |  
 | --- | --- |  
 | Author |	Ardeshir, Mass |  
