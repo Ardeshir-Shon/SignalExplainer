@@ -43,8 +43,11 @@ import os
 from numpy import load
 
 
-model_file = 'model_convlstm.h5'
-data_file = 'xFake_30_n.npz'
+# model_file = 'model_convlstm.h5'
+# data_file = 'xFake_30_n.npz'
+
+model_file = 'multi_convlstm.h5'
+data_file = 'dataset.npz'
 
 model=load_model(model_file)
 model.summary()
@@ -53,8 +56,8 @@ model.summary()
 
 dict_data = load(data_file)
 # extract the first array
-
-xFake = dict_data['arr_0']
+print(type(dict_data))
+xFake = dict_data['name1']
 
 X_M1_One = xFake
 
@@ -148,7 +151,7 @@ for feature in range(numberOfChannels):
         if numberOfChannels == 1:
             axs[i].scatter(y, x, s = 15 ,c=rgba_colors)
         else:
-            axs[i,feature].scatter(y, x, s = 15 ,c=rgba_colors)
+            axs[i,feature].scatter(y, x, s = 15 ,c=rgba_colors.astype(int))
 
 
         # -------------------
@@ -166,5 +169,5 @@ for feature in range(numberOfChannels):
         if numberOfChannels == 1:
             axs[i].scatter(y, x, s = 15 ,c=rgba_colors)
         else:
-            axs[i,feature].scatter(y, x, s = 15 ,c=rgba_colors)
+            axs[i,feature].scatter(y, x, s = 15 ,c=rgba_colors.astype(int))
 plt.show()
