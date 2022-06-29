@@ -1,3 +1,4 @@
+import random
 import tensorflow as tf
 
 from tensorflow import keras
@@ -41,105 +42,129 @@ import os
 
 from numpy import load
 
-model_convlstm=load_model('model_convlstm.h5')
-model_convlstm.summary()
+
+model_file = 'model_convlstm.h5'
+data_file = 'xFake_30_n.npz'
+
+model=load_model(model_file)
+model.summary()
 
 
 
-dict_data = load('xFake_30_n.npz')
+dict_data = load(data_file)
 # extract the first array
 
 xFake = dict_data['arr_0']
 
 X_M1_One = xFake
 
-yPred_M1_One = model_convlstm.predict(X_M1_One)
+yPred_M1_One = model.predict(X_M1_One)
 
 
 classes_M1_One = np.argmax(yPred_M1_One, axis=1)
 
-print(dict_data)
+numberOfSamples,signalLength,numberOfChannels = xFake.shape
 
-explainer = shap.GradientExplainer(model_convlstm, xFake[:100])
-shvalues = explainer.shap_values(xFake[101:111])
+numberOfExplainerFeeds = min(int(numberOfSamples*0.25),125)
 
-# print(len(shvalues))
+explainer = shap.GradientExplainer(model, xFake[:numberOfExplainerFeeds])
 
-c0 = shvalues[0]
-c1 = shvalues[1]
-c2 = shvalues[2]
-c3 = shvalues[3]
-c4 = shvalues[4]
-c5 = shvalues[5]
-# print(type(c0))
-# print(c0[0,:,0])
+numberOfExplainedSamples = 5
 
-print(min(c0[0,:,0]))
+shvalues = explainer.shap_values(xFake[numberOfExplainerFeeds+1:numberOfExplainerFeeds+numberOfExplainedSamples+1])
 
-print(len(c0[0,:,0]))
+print(len(shvalues))
+
+print(shvalues[0].shape)
 
 
-plt.plot(c0[0,:,0])
-plt.show()
+# c0 = shvalues[0]
+# c1 = shvalues[1]
+# c2 = shvalues[2]
+# c3 = shvalues[3]
+# c4 = shvalues[4]
+# c5 = shvalues[5]
+# # print(type(c0))
+# # print(c0[0,:,0])
 
-sample = 5
-feature = 0
-fig, axs = plt.subplots(6,2, dpi=250)
+# print(min(c0[0,:,0]))
+
+# print(len(c0[0,:,0]))
+
+
+# plt.plot(c0[0,:,0])
+# plt.show()
+
+numberOfClasses = len(shvalues)
+
+sample = random.randint(0,numberOfExplainedSamples-1)
+fig, axs = plt.subplots(numberOfClasses,numberOfChannels, dpi=250)
 fig.suptitle("Shap values for a sample which it's label is "+str(xFake[sample][0]))
 
 fig.text(0.5, 0.04,'#Sample', ha='center')
 fig.text(0.04, 0.5,'Signal Value', va='center', rotation='vertical')
 
 
-for feature in range(1):
+for feature in range(numberOfChannels):
+    aggList = []
+    for class_ in range(numberOfClasses):
+        aggList = list(aggList) + list(shvalues[class_][sample,:,feature])
+    overallMax = abs(max(aggList))
+    # overallMax = abs(max(list(c0[sample,:,feature])+list(c1[sample,:,feature])+list(c2[sample,:,feature])+list(c3[sample,:,feature])+list(c4[sample,:,feature])+list(c5[sample,:,feature]),key=abs))
 
-  overallMax = abs(max(list(c0[sample,:,feature])+list(c1[sample,:,feature])+list(c2[sample,:,feature])+list(c3[sample,:,feature])+list(c4[sample,:,feature])+list(c5[sample,:,feature]),key=abs))
+    # print(y_test[0])
+    for i in range(numberOfClasses):
+        reds = []
+        blues = []
 
-  # print(y_test[0])
+        for value in shvalues[i][sample,:,feature]:
+            if value >= 0:
+                reds.append(abs(value)/overallMax)
+                if abs(value)/overallMax > 1:
+                    print(value)
+                blues.append(0)
+            else:
+                reds.append(0)
+                blues.append(abs(value)/overallMax)
 
-  for i in range(6):
-    reds = []
-    blues = []
+        y = np.arange(signalLength)
+        
+        if numberOfChannels == 1:
+            axs[i].plot(y,xFake[sample,:,feature],color = "gray")    
+        else:
+            axs[i,feature].plot(y,xFake[sample,:,feature],color = "gray")
 
-    for value in shvalues[i][sample,:,feature]:
-      if value >= 0:
-        reds.append(abs(value)/overallMax)
-        if abs(value)/overallMax > 1:
-          print(value)
-        blues.append(0)
-      else:
-        reds.append(0)
-        blues.append(abs(value)/overallMax)
+        # x = c0[0,:,1] #np.array([ v if v < 0 else 0 for v in c0[0,:,1]])
+        x = xFake[sample,:,feature]
+        y = np.arange(signalLength)
 
-    y = np.arange(512)
-    
-    axs[i,feature].plot(y,xFake[sample,:,feature],color = "gray")
-    
-    # x = c0[0,:,1] #np.array([ v if v < 0 else 0 for v in c0[0,:,1]])
-    x = xFake[sample,:,feature]
-    y = np.arange(512)
+        alphas = np.array(blues)
+        rgba_colors = np.zeros((signalLength,4))
+        # for red the first column needs to be one
+        rgba_colors[:,2] = 1
+        # the fourth column needs to be your alphas
+        rgba_colors[:, 3] = alphas
 
-    alphas = np.array(blues)
-    rgba_colors = np.zeros((512,4))
-    # for red the first column needs to be one
-    rgba_colors[:,2] = 1
-    # the fourth column needs to be your alphas
-    rgba_colors[:, 3] = alphas
+        if numberOfChannels == 1:
+            axs[i].scatter(y, x, s = 15 ,c=rgba_colors)
+        else:
+            axs[i,feature].scatter(y, x, s = 15 ,c=rgba_colors)
 
-    axs[i,feature].scatter(y, x, s = 15 ,color=rgba_colors)
-    
-    
-    # -------------------
-    # x = c0[0,:,1] #np.array([ v if v >= 0 else 0 for v in c0[0,:,1]])
-    x = xFake[sample,:,feature]
-    y = np.arange(512)
 
-    alphas = np.array(reds)
-    rgba_colors = np.zeros((512,4))
-    # for red the first column needs to be one
-    rgba_colors[:,0] = 1
-    # the fourth column needs to be your alphas
-    rgba_colors[:, 3] = alphas
+        # -------------------
+        # x = c0[0,:,1] #np.array([ v if v >= 0 else 0 for v in c0[0,:,1]])
+        x = xFake[sample,:,feature]
+        y = np.arange(signalLength)
 
-    axs[i,feature].scatter(y, x, s = 15 ,color=rgba_colors)
+        alphas = np.array(reds)
+        rgba_colors = np.zeros((signalLength,4))
+        # for red the first column needs to be one
+        rgba_colors[:,0] = 1
+        # the fourth column needs to be your alphas
+        rgba_colors[:, 3] = alphas
+        
+        if numberOfChannels == 1:
+            axs[i].scatter(y, x, s = 15 ,c=rgba_colors)
+        else:
+            axs[i,feature].scatter(y, x, s = 15 ,c=rgba_colors)
 plt.show()
