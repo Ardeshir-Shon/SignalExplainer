@@ -43,7 +43,6 @@ nodeLanguageServer/**
 nodeLanguageServer.*/**
 dist/**
 **/__pycache__/**
-*.npz
 **/.mypy_cache/**
 **/.vscode-test/**
 *.mat
