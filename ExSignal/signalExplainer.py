@@ -85,8 +85,11 @@ from numpy import load
 def main():
 
     if sys.argv[1] == '-h':
-        print('Usage: python3 signalExplainer.py <path to signal>')
-        print('Example: python3 signalExplainer.py /home/user/signal.mat')
+        print('Usage: python signalExplainer.py <path to TF model> <path to NPZ data file>')
+        print('Example: python signalExplainer.py multi_convlstm.h5 dataset.npz')
+        print('Structure of NPZ file: \n   - X: numpy array of shape (n_samples, signal , n channels) \n   - y: numpy array of shape (n_samples, 1) \n   - channel_names: numpy array of shape (numberOfChannels, 1) \n   - class_names: numpy array of shape (numberOfClasses, 1)')
+        print('Structure of TF model: \n   - model: keras model')
+        print('\n\n***X should be in the same order as the channels in the model***')
         return
 
     model_file = str(sys.argv[1])
@@ -213,6 +216,6 @@ def main():
             fig.add_artist(line)
 
     plt.show()
-    
+
 if __name__ == '__main__':
     main()
