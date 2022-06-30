@@ -86,7 +86,7 @@ def main():
 
     if sys.argv[1] == '-h':
         print('Usage: python signalExplainer.py <path to TF model> <path to NPZ data file>')
-        print('Example: python signalExplainer.py multi_convlstm.h5 dataset.npz')
+        print('Example: python signalExplainer.py model/multi_convlstm.h5 data/dataset.npz')
         print('Structure of NPZ file: \n   - X: numpy array of shape (n_samples, signal , n channels) \n   - y: numpy array of shape (n_samples, 1) \n   - channel_names: numpy array of shape (numberOfChannels, 1) \n   - class_names: numpy array of shape (numberOfClasses, 1)')
         print('Structure of TF model: \n   - model: keras model')
         print('\n\n***X should be in the same order as the channels in the model***')
